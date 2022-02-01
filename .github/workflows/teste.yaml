@@ -27,7 +27,18 @@ jobs:
         run: |
           pwd
           ls
-      
+
+  meu_job_2:
+    name: Meu job 2
+    runs-on: ubuntu-latest
+    steps:
+       - name: Meu segundo step
+         run: echo "Este é meu segundo step"
+
+       - name: Listando dir com cache
+         run: |
+           pwd
+           ls    
 
 
 
