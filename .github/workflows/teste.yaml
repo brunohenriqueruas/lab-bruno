@@ -1,0 +1,26 @@
+name: Workflow de teste
+
+on: push
+
+jobs:
+  meu_job_1:
+    name: Meu Job 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Meu primeiro step
+        run: |
+          echo "Funciona o primeiro step"
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: winnin/desafio
+
+      - name: Listando dir
+        run: |
+          pwd
+          ls
+
+
+
+
