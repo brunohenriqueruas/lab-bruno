@@ -20,7 +20,7 @@ jobs:
         id: cache-release-dist
         uses: actions/cache@v2
         with:
-          path: 
+          path: cache
           key: ${{ runner.os }}-${{github.run_number}}-release-dist   
 
       - name: Listando dir
