@@ -6,21 +6,20 @@ jobs:
   meu_job_1:
     name: Meu Job 1
     runs-on: ubuntu-latest
-    steps:
-        uses: actions/checkout@v2
+    steps:      
 
+      - name: Meu primeiro step
+        run: |
+          echo "Funciona o primeiro step"
+      
       - name: Cache teste
       	id: cache-teste
       	uses: actions/cache@v2
       	with:
           path: winnin/desafio
           key: ${{ runner.os }}-teste
-
-      - name: Meu primeiro step
-        run: |
-          echo "Funciona o primeiro step"
-
-    
+          
+      
       - name: Checkout
         uses: actions/checkout@v2
         with:
