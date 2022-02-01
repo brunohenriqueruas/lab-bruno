@@ -16,16 +16,18 @@ jobs:
         with:
           repository: winnin/desafio
 
-      - name: Listando dir
-        run: |
-          pwd
-          ls
       - name: cache teste
         users: actions/cache@v2
         with:
           path: winnin/desafio
           key: ${{ runner.os }}-actions/cache@v2-${{hashFiles('*.*')}}
-          restore-keys: ${{ runner.os }}-actions/cache@v2
+          restore-keys: ${{ runner.os }}-actions/cache@v2    
+
+      - name: Listando dir
+        run: |
+          pwd
+          ls
+      
 
 
 
