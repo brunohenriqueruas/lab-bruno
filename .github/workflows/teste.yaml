@@ -7,13 +7,14 @@ jobs:
     name: Meu Job 1
     runs-on: ubuntu-latest
     steps:
+      uses: actions/checkout@v2
 
       - name: Cache teste
       	id: cache-teste
       	uses: actions/cache@v2
       	with:
-        path: winnin/desafio
-        key: ${{ runner.os }}-teste
+          path: winnin/desafio
+          key: ${{ runner.os }}-teste
 
       - name: Meu primeiro step
         run: |
