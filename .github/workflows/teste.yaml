@@ -16,12 +16,12 @@ jobs:
         with:
           repository: winnin/desafio
 
-      - name: cache teste
-        users: actions/cache@v2
+      - name: Cache release dist
+        id: cache-release-dist
+        uses: actions/cache@v2
         with:
-          path: winnin/desafio
-          key: ${{ runner.os }}-actions/cache@v2-${{hashFiles('*.*')}}
-          restore-keys: ${{ runner.os }}-actions/cache@v2    
+          path: 
+          key: ${{ runner.os }}-${{github.run_number}}-release-dist   
 
       - name: Listando dir
         run: |
