@@ -6,8 +6,7 @@ jobs:
   meu_job_1:
     name: Meu Job 1
     runs-on: ubuntu-latest
-    steps:           
-
+    steps:        
       - name: Meu primeiro step
         run: |
           echo "Funciona o primeiro step"   
