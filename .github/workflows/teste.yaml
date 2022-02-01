@@ -6,16 +6,7 @@ jobs:
   meu_job_1:
     name: Meu Job 1
     runs-on: ubuntu-latest
-    steps:
-      - users: actions/checkout@2
-
-      - name: cache teste
-        users: actions/cache@v2
-        env:
-          cache-name: cache-teste
-        with:
-          path: winnin/desafio
-          key: ${{ runner.os }}         
+    steps:           
 
       - name: Meu primeiro step
         run: |
@@ -30,7 +21,12 @@ jobs:
         run: |
           pwd
           ls
-
+      - name: cache teste
+        users: actions/cache@v2
+        with:
+          path: winnin/desafio
+          key: ${{ runner.os }}-actions/cache@v2-${{hashFiles('*.*')}}
+          restore-keys: ${{ runner.os }}-actions/cache@v2
 
 
 
