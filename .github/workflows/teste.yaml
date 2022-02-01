@@ -6,7 +6,16 @@ jobs:
   meu_job_1:
     name: Meu Job 1
     runs-on: ubuntu-latest
-    steps:      
+    steps:
+      - users: actions/checkout@2
+
+      - name: cache teste
+        users: actions/cache@v2
+        env:
+          cache-name: cache-teste
+        with:
+          path: winnin/desafio
+          key: ${{ runner.os }}         
 
       - name: Meu primeiro step
         run: |
