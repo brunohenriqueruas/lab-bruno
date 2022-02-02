@@ -20,7 +20,7 @@ jobs:
         id: cache-teste
         uses: actions/cache@v2
         with:
-          path: "/home/runner/work/lab-bruno/lab-bruno"
+          path: "/home/runner/work/lab-bruno/lab-bruno/*"
           key: LAB_TEMP
 
       - name: Listando dir 
