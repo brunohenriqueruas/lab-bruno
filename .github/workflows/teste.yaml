@@ -21,8 +21,8 @@ jobs:
         id: cache-teste
         uses: actions/cache@v2
         with:
-          path: "winnin/desafio"
-          key: LAB_TEMP
+          path: cache
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
       - name: Listando dir 
         run: |
