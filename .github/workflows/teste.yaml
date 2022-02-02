@@ -28,6 +28,14 @@ jobs:
         run: |
           pwd
           ls
+      - name: Meu job 2
+        run: |
+          pwd      
+          ls
+      - name: Meu job 3
+        run: |
+          pwd      
+          ls
 
   meu_job_2:
     name: Meu job 2
