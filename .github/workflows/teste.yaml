@@ -33,8 +33,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: Meu segundo step
-         run: echo "Cache hit: ${{steps.cache-teste.outputs.cache-hit}}"
-
+         run: | 
+           echo "Cache hit: ${{steps.cache-teste.outputs.cache-hit}}"
+           pwd
+           ls
         
 
 
