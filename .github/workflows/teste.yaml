@@ -34,9 +34,9 @@ jobs:
     steps:
        - name: Meu segundo step
          run: | 
-           printf "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"
-          
-          
+           echo "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"
+           pwd
+           ls
         
 
 
