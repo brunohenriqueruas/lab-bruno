@@ -16,11 +16,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: winnin/desafio
-          
+          path: cache 
+
       - name: Listando dir 
         run: |
           pwd
-          ls    
+          ls
+          ls cache    
 
       - name: Cache teste
         id: cache-teste
