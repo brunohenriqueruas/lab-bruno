@@ -34,7 +34,7 @@ jobs:
     steps:
        - name: Meu segundo step
          run: | 
-           echo "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"
+           printf "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"
           
           
         
