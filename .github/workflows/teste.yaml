@@ -20,7 +20,7 @@ jobs:
         id: cache-teste
         uses: actions/cache@v2
         with:
-          path: cache
+          path: "/home/runner/work/lab-bruno/lab-bruno"
           key: ${{ runner.os }}-${{github.run_number}}-teste  
 
       - name: Listando dir
@@ -34,7 +34,7 @@ jobs:
     steps:
        - name: Meu segundo step
          run: | 
-           echo "Cache hit: ${{steps.cache-teste.outputs.cache-hit}}"
+           echo "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"
            cd "/home/runner/work/lab-bruno/lab-bruno"
            pwd
            ls
