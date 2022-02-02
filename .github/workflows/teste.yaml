@@ -16,6 +16,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: winnin/desafio
+          
+      - name: Listando dir 
+        run: |
+          pwd
+          ls    
 
       - name: Cache teste
         id: cache-teste
@@ -46,17 +51,4 @@ jobs:
            echo "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"-${{ runner.os }}-${{ hashFiles('*') }}
            pwd
            ls
-
-       - name: Cache teste
-         id: cache-teste
-         uses: actions/cache@v2
-         with:
-          path: cache
-          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
-          
-       - name: listando Minha job2   
-         run: |
-          pwd      
-          ls
-
 
