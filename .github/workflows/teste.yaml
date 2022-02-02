@@ -36,6 +36,7 @@ jobs:
        - name: Meu segundo step
          run: | 
            echo "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"
+           key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
        - name: Listando dir 
          run: |
           pwd
