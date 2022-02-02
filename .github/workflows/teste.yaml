@@ -53,6 +53,8 @@ jobs:
          with:
           path: cache
           key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+          
+       - name: listando Minha job2   
          run: |
           pwd      
           ls
