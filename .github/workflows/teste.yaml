@@ -43,7 +43,7 @@ jobs:
     steps:
        - name: Meu segundo step
          run: | 
-           echo "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"
+           echo "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"-${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
            pwd
            ls
 
