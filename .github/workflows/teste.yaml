@@ -21,7 +21,7 @@ jobs:
         id: cache-teste
         uses: actions/cache@v2
         with:
-          path: "/home/runner/work/lab-bruno/lab-bruno/"
+          path: "winnin/desafio"
           key: LAB_TEMP
 
       - name: Listando dir 
