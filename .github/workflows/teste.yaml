@@ -43,9 +43,18 @@ jobs:
     steps:
        - name: Meu segundo step
          run: | 
-           echo "Cache teste: ${{steps.cache-teste.outputs.winnin/desafio}}
+           echo "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"-${{ runner.os }}-${{ hashFiles('*') }}
            pwd
            ls
 
+       - name: Cache teste
+         id: cache-teste
+         uses: actions/cache@v2
+         with:
+          path: cache
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+         run: |
+          pwd      
+          ls
 
 
