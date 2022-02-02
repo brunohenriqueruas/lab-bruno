@@ -21,7 +21,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "/home/runner/work/lab-bruno/lab-bruno"
-          key: ${{ runner.os }}-${{LAB_TEMP}}-teste  
+          key: LAB_TEMP
 
       - name: Listando dir
         run: |
