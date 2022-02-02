@@ -16,12 +16,12 @@ jobs:
         with:
           repository: winnin/desafio
 
-      - name: Cache release dist
-        id: cache-release-dist
+      - name: Cache teste
+        id: cache-teste
         uses: actions/cache@v2
         with:
           path: cache
-          key: ${{ runner.os }}-${{github.run_number}}-release-dist   
+          key: ${{ runner.os }}-${{github.run_number}}-teste  
 
       - name: Listando dir
         run: |
@@ -33,12 +33,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: Meu segundo step
-         run: echo "Este é meu segundo step"
+         run: echo "Cache hit: ${{steps.cache-teste.outputs.cache-hit}}"
 
-       - name: Listando dir com cache
-         run: |
-           pwd
-           ls    
+        
 
 
 
