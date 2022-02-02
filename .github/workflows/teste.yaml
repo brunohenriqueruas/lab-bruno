@@ -25,7 +25,6 @@ jobs:
           ls cache    
 
       - name: Cache teste
-        id: cache-teste
         uses: actions/cache@v2
         with:
           path: cache
@@ -40,4 +39,12 @@ jobs:
          run: | 
            pwd
            ls
-
+       - name: Cache teste
+         uses: actions/cache@v2
+         with:
+          path: cache2
+          key: chave_teste2
+       - name: Meu segundo step
+         run: | 
+           pwd
+           ls
