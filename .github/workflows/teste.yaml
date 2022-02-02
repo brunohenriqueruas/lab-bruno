@@ -29,28 +29,15 @@ jobs:
         uses: actions/cache@v2
         with:
           path: cache
-          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+          key: chave_teste
 
-      - name: Listando dir 
-        run: |
-          pwd
-          ls
-      - name: Meu job 2
-        run: |
-          pwd      
-          ls
-      - name: Meu job 3
-        run: |
-          pwd      
-          ls
-
+      
   meu_job_2:
     name: Meu job 2
     runs-on: ubuntu-latest
     steps:
        - name: Meu segundo step
          run: | 
-           echo "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"-${{ runner.os }}-${{ hashFiles('*') }}
            pwd
            ls
 
