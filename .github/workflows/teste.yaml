@@ -23,7 +23,7 @@ jobs:
           path: "/home/runner/work/lab-bruno/lab-bruno"
           key: LAB_TEMP
 
-      - name: Listando dir
+      - name: Listando dir 
         run: |
           pwd
           ls
@@ -35,7 +35,7 @@ jobs:
        - name: Meu segundo step
          run: | 
            echo "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"
-           cd "/home/runner/work/lab-bruno/lab-bruno"
+          
           
         
 
