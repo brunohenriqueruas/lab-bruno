@@ -35,6 +35,7 @@ jobs:
        - name: Meu segundo step
          run: | 
            echo "Cache hit: ${{steps.cache-teste.outputs.cache-hit}}"
+           cd "/home/runner/work/lab-bruno/lab-bruno"
            pwd
            ls
         
