@@ -2,6 +2,7 @@ name: Workflow de teste
 
 on: push
 
+
 jobs:
   meu_job_1:
     name: Meu Job 1
@@ -20,7 +21,7 @@ jobs:
         id: cache-teste
         uses: actions/cache@v2
         with:
-          path: "/home/runner/work/lab-bruno/lab-bruno/*"
+          path: "/home/runner/work/lab-bruno/lab-bruno/"
           key: LAB_TEMP
 
       - name: Listando dir 
@@ -35,9 +36,10 @@ jobs:
        - name: Meu segundo step
          run: | 
            echo "Cache teste: ${{steps.cache-teste.outputs.cache-teste}}"
-           pwd
-           ls
-        
+       - name: Listando dir 
+         run: |
+          pwd
+          ls
 
 
 
