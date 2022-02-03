@@ -17,6 +17,7 @@ jobs:
            
       - name: Checkout
         uses: actions/checkout@v2
+        ref: ${{ steps.release_download.outputs.release_tag }}
         with:
           repository: winnin/desafio
           path: cache 
