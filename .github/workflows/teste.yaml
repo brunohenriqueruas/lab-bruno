@@ -7,6 +7,9 @@ jobs:
   meu_job_1:
     name: Meu Job 1
     runs-on: ubuntu-latest
+    outputs:
+      eligible_release: ${{ steps.parse_release_tag_name.outputs.release_tag }}
+                            
     steps:        
       - name: Meu primeiro step
         run: |
@@ -51,18 +54,22 @@ jobs:
            pwd
            ls
 
-       - name: Cache teste
-         uses: actions/cache@v2
-         with:
-          path: cache2
-          key: chave_teste
+       - name: Check Out Repo
+         uses: actions/checkout@v2
+         ref: ${{ steps.release_download.outputs.release_tag }}
+
+       - name: Parse release tag name
+         id: parse_release_tag_name
+         run: |
+          RELEASE_TAG=$( echo ${{ steps.release_download.outputs.release_tag }}
+          echo "::set-output name=release_tag::$RELEASE_TAG"       
 
        - name: Meu segundo step
          run: | 
            pwd
            ls    
 
-       - name: Cache teste
+       - name: Cache teste tras dados
          uses: actions/cache@v2
          with:
           path: cache
@@ -71,4 +78,7 @@ jobs:
        - name: Meu segundo step
          run: | 
            pwd
-           ls         
+           ls 
+           ls cache
+
+               
