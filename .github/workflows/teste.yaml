@@ -17,7 +17,6 @@ jobs:
            
       - name: Checkout
         uses: actions/checkout@v2
-        ref: ${{ steps.release_download.outputs.release_tag }}
         with:
           repository: winnin/desafio
           path: cache 
@@ -62,7 +61,7 @@ jobs:
        - name: Parse release tag name
          id: parse_release_tag_name
          run: |
-          RELEASE_TAG=$( echo ${{ steps.release_download.outputs.release_tag }}
+          RELEASE_TAG=$( echo ${{ steps.parse_release_tag_name.outputs.release_tag }}
           echo "::set-output name=release_tag::$RELEASE_TAG"       
 
        - name: Meu segundo step
