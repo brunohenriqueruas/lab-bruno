@@ -8,9 +8,15 @@ jobs:
     name: Meu Job 1
     runs-on: ubuntu-latest
     outputs:
-      eligible_release: ${{ steps.parse_release_tag_name.outputs.release_tag }}
+      output1: ${{ steps.job1_set_output.outputs.output1 }}}
                             
-    steps:        
+    steps:
+
+      - name: Set output
+        id: job1_set_output
+        run: |
+          OUTPUT="MyOutput"
+          echo "::set-output name=output1::$OUTPUT"            
       - name: Meu primeiro step
         run: |
           echo "Funciona o primeiro step"   
@@ -36,6 +42,7 @@ jobs:
       
   meu_job_2:
     name: Meu job 2
+    needs: [job1]
     runs-on: ubuntu-latest
     steps:
        - name: Meu segundo step
@@ -57,13 +64,11 @@ jobs:
        - name: Check Out Repo
          uses: actions/checkout@v2
         
-
-       - name: Parse release tag name
-         id: parse_release_tag_name
+       - name: job2
+       - name: Echo job1 output  
          run: |
-          RELEASE_TAG=$( echo ${{ steps.parse_release_tag_name.outputs.release_tag }}
-          echo "::set-output name=release_tag::$RELEASE_TAG"       
-
+           echo ${{ needs.job1.outputs.output1 }}
+                 
        - name: Meu segundo step
          run: | 
            pwd
@@ -80,5 +85,13 @@ jobs:
            pwd
            ls 
            ls cache
+
+               
+
+
+
+
+
+
 
                
