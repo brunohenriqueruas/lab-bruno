@@ -64,11 +64,11 @@ jobs:
        - name: Check Out Repo
          uses: actions/checkout@v2
         
-       - name: job2
+       
        - name: Echo job1 output  
          run: |
            echo ${{ needs.job1.outputs.output1 }}
-                 
+
        - name: Meu segundo step
          run: | 
            pwd
