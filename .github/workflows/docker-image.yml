@@ -17,10 +17,13 @@ on:
 #     - name: Build the Docker image
 #       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 
-env:
-  DOCKER_USER: ${{secrets.DOCKER_USER}}
-  DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-  REPO_NAME: ${{secrets.REPO_NAME}}
+  - name: Sample Azure action
+    env: # Or as an environment variable
+      credentials: ${{secrets.DOCKER_USER}}
+      credentials: ${{secrets.DOCKER_PASSWORD}} 
+      credentials: ${{secrets.REPO_NAME}}
+
+   
 jobs:
   push-image-to-docker-hub:  # job name
     runs-on: ubuntu-latest  # runner name : (ubuntu latest version) 
