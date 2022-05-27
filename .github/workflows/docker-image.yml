@@ -30,12 +30,12 @@ jobs:
       - name: Get current date # get the date of the build
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d--%M-%S')"
-      - name: acessando repositório
-        run: cd /home/runner/work/lab-bruno/
-      - name: listando diretório
-        run: ls -h
+#       - name: acessando repositório
+#         run: cd /home/runner/work/lab-bruno/
+#       - name: listando diretório
+#         run: ls -h
       - name: Build the Docker image # push The image to the docker hub
-        run: docker build -t brunohenriqueruas/build:latest .
+        run: docker build . --file Dockerfile --tag brunohenriqueruas/build:$(date +%s)
       
       - name: Docker Push
         run: docker push brunohenriqueruas/build:latest
