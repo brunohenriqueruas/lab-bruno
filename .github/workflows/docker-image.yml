@@ -33,7 +33,7 @@ jobs:
       - name: acessando repositório
         run: cd /home/runner/work/lab-bruno/
       - name: Build the Docker image # push The image to the docker hub
-        run: docker build ./ --file Dockerfile --tag brunohenriqueruas/build:${{ steps.date.outputs.date }}
+        run: docker build /home/runner/work/lab-bruno/lab-bruno/Dockerfile . --tag brunohenriqueruas/build:latest
       
       - name: Docker Push
-        run: docker push brunohenriqueruas/build:${{ steps.date.outputs.date }}
+        run: docker push brunohenriqueruas/build:latest
