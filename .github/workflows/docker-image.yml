@@ -17,11 +17,11 @@ on:
 #     - name: Build the Docker image
 #       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 
-  - name: Sample Azure action
-    env: # Or as an environment variable
-      credentials: ${{secrets.DOCKER_USER}}
-      credentials: ${{secrets.DOCKER_PASSWORD}} 
-      credentials: ${{secrets.REPO_NAME}}
+
+env: # Or as an environment variable
+  credentials: ${{secrets.DOCKER_USER}}
+  credentials: ${{secrets.DOCKER_PASSWORD}} 
+  credentials: ${{secrets.REPO_NAME}}
 
    
 jobs:
