@@ -20,8 +20,6 @@ on:
 
 env: # Or as an environment variable
   credentials: ${{secrets.DOCKER_USER}}
-  credentials: ${{secrets.DOCKER_PASSWORD}} 
-  credentials: ${{secrets.REPO_NAME}}
 
    
 jobs:
