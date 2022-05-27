@@ -15,10 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag brunohenriqueruas/build:$(date +%s)
+      run: docker build . --file Dockerfile --tag brunohenriqueruas/build:v1
     - name: docker login
       run: | # logar na conta
         docker login -u brunohenriqueruas -p 0b836632-0806-4b11-bceb-bf5ed46b958e
     - name: docker login
       run: |
-        docker push  brunohenriqueruas/build:$(date +%s)
+        docker push  brunohenriqueruas/build:v1
