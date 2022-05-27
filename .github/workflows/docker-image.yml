@@ -33,9 +33,9 @@ jobs:
       - name: acessando repositório
         run: cd /home/runner/work/lab-bruno/
       - name: listando diretório
-        run: ls
+        run: ls -h
       - name: Build the Docker image # push The image to the docker hub
-        run: docker build .  --tag brunohenriqueruas/build:latest
+        run: docker build -t brunohenriqueruas/build:latest .
       
       - name: Docker Push
         run: docker push brunohenriqueruas/build:latest
