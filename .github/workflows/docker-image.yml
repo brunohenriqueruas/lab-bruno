@@ -19,8 +19,8 @@ jobs:
           password: 0b836632-0806-4b11-bceb-bf5ed46b958e
                 
    
-      - name: Build and push
-        uses: docker/build-push-action@v2
+#       - name: Build and push
+#         uses: docker/build-push-action@v2
       - name: docker login
         run: | # log into docker hub account
           docker login -u brunohenriqueruas -p 0b836632-0806-4b11-bceb-bf5ed46b958e
